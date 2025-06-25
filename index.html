@@ -3,106 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Roblox Scripts</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
+  <title>vex.gg — Roblox Scripts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, #1f1f1f, #2a2a2a);
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
+      background: #111;
+      border-bottom: 1px solid #222;
     }
 
     header h1 {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      color: #00ffea;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -1px;
     }
 
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: url('https://i.ibb.co/syJP94p/roblox-bg.jpg') center/cover no-repeat;
+      padding: 70px 20px;
     }
 
     .hero h2 {
-      font-size: 2.5rem;
-      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      color: #ccc;
+      font-size: 1.1rem;
+      color: #bbb;
     }
 
-    .product-section {
+    .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
+      gap: 25px;
+      padding: 50px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    .product-card {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #00ffea;
+    .product {
+      background: #181818;
+      padding: 25px;
+      border-radius: 16px;
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      border: 1px solid #222;
     }
 
-    .product-card:hover {
-      transform: scale(1.05);
+    .product:hover {
+      transform: translateY(-5px);
     }
 
-    .product-card img {
+    .product img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
 
-    .product-card h3 {
-      margin: 10px 0;
-      color: #00ffea;
+    .product h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
-    .product-card p {
+    .product p {
       font-size: 0.95rem;
-      color: #ccc;
+      color: #aaa;
+      margin-bottom: 20px;
     }
 
-    .buy-button {
+    .button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 24px;
-      background: #00ffea;
-      color: #0f0f0f;
-      border-radius: 30px;
+      padding: 12px 26px;
+      background: #ffffff;
+      color: #0e0e0e;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       transition: background 0.3s ease;
     }
 
-    .buy-button:hover {
-      background: #00bba8;
+    .button:hover {
+      background: #e5e5e5;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #666;
-      margin-top: 30px;
+      padding: 40px 20px;
+      color: #555;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
@@ -112,42 +118,43 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>🔥 My Roblox Scripts 🔥</h1>
+  <h1>vex.gg</h1>
 </header>
 
 <section class="hero">
-  <h2>Boost Your Roblox Game</h2>
-  <p>Premium, reliable, and powerful scripts for your Roblox adventures.</p>
+  <h2>Clean, Premium Roblox Scripts</h2>
+  <p>High-quality, reliable scripts designed for top-tier Roblox performance.</p>
 </section>
 
-<section class="product-section">
-  <div class="product-card">
-    <img src="https://i.ibb.co/H7TyNFC/script1.png" alt="Script 1">
-    <h3>Auto Farm Script</h3>
-    <p>Maximize your resources effortlessly with this auto farm script.</p>
-    <a href="#" class="buy-button">Buy Now</a>
+<section class="products">
+  <div class="product">
+    <img src="https://i.ibb.co/H7TyNFC/script1.png" alt="Auto Farm Script">
+    <h3>Auto Farm</h3>
+    <p>Effortlessly farm resources while you chill. Reliable and optimized.</p>
+    <a href="#" class="button">Buy Script</a>
   </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/JqGJBr9/script2.png" alt="Script 2">
+  <div class="product">
+    <img src="https://i.ibb.co/JqGJBr9/script2.png" alt="ESP + Aimbot">
     <h3>ESP + Aimbot</h3>
-    <p>Gain a competitive edge with ESP and Aimbot for top Roblox shooters.</p>
-    <a href="#" class="buy-button">Buy Now</a>
+    <p>Dominate the game with clean ESP visuals and accurate aimbot features.</p>
+    <a href="#" class="button">Buy Script</a>
   </div>
 
-  <div class="product-card">
-    <img src="https://i.ibb.co/MnDPqjC/script3.png" alt="Script 3">
-    <h3>Game Pass Unlocker</h3>
-    <p>Unlock exclusive content without limitations with this powerful tool.</p>
-    <a href="#" class="buy-button">Buy Now</a>
+  <div class="product">
+    <img src="https://i.ibb.co/MnDPqjC/script3.png" alt="Gamepass Unlocker">
+    <h3>Gamepass Unlocker</h3>
+    <p>Instantly unlock exclusive gamepass content without limits.</p>
+    <a href="#" class="button">Buy Script</a>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 My Roblox Scripts. All rights reserved.
+  &copy; 2025 vex.gg. All rights reserved.
 </footer>
 
 </body>
