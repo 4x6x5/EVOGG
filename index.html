@@ -48,6 +48,20 @@
       pointer-events: none;
       z-index: 0;
     }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #001100;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00aa00;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00ff00;
+    }
   </style>
 </head>
 <body class="text-white relative">
@@ -58,8 +72,8 @@
 <header class="flex justify-between items-center p-4 relative z-10">
   <div class="text-3xl font-bold">≡</div>
   <div class="space-x-2">
-    <button class="btn">Purchase Evo.gg</button>
-    <button class="btn">Discord</button>
+    <a href="https://dsc.gg/evogg" target="_blank" class="btn">Purchase Evo.gg</a>
+    <a href="https://discord.gg/yourdiscordlink" target="_blank" class="btn">Discord</a>
   </div>
 </header>
 
@@ -67,8 +81,8 @@
   <h1 class="text-9xl font-extrabold drop-shadow-lg">Evo.gg</h1>
   <p class="mt-2 text-gray-400">The one to change it all, the ultimate free scripting utility.</p>
   <div class="mt-6 space-x-2">
-    <button class="btn">Purchase Evo Scripts</button>
-    <button class="btn">Discord</button>
+    <a href="https://www.roblox.com/communities/35919808/Crimetime#!/about" target="_blank" class="btn">Roblox Group</a>
+    <a href="https://dsc.gg/evogg" target="_blank" class="btn">Purchase Evo.gg</a>
   </div>
 </main>
 
@@ -109,6 +123,12 @@
     </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="text-center text-gray-500 text-sm py-6 relative z-10 mt-16">
+  © 2025 Evo.gg — All rights reserved. Made only By <span class="text-green-500 font-semibold">F00GY</span>
+</footer>
+
 
 <!-- Snow animation script -->
 <script>
