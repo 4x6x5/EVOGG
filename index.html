@@ -1,161 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>vex.gg — Roblox Scripts</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evo.gg</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0e0e0e;
-      color: #f0f0f0;
-      line-height: 1.6;
+      background-color: #000;
+      background-image:
+        radial-gradient(circle at top left, rgba(0, 64, 0, 0.2), transparent 70%),
+        linear-gradient(90deg, rgba(0,64,0,0.15) 1px, transparent 1px),
+        linear-gradient(rgba(0,64,0,0.15) 1px, transparent 1px);
+      background-size: 80px 80px, 80px 80px, 80px 80px;
     }
-
-    header {
-      padding: 30px 20px;
-      text-align: center;
-      background: #111;
-      border-bottom: 1px solid #222;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -1px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 70px 20px;
-    }
-
-    .hero h2 {
-      font-size: 2.4rem;
+    .btn {
+      background: linear-gradient(145deg, #004400, #002200);
+      border: 1px solid #00aa00;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      color: #fff;
       font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #bbb;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .product {
-      background: #181818;
-      padding: 25px;
-      border-radius: 16px;
-      text-align: center;
+      box-shadow: 0 0 10px #00ff00;
       transition: all 0.3s ease;
-      border: 1px solid #222;
     }
-
-    .product:hover {
-      transform: translateY(-5px);
+    .btn:hover {
+      background: #003300;
+      box-shadow: 0 0 20px #00ff00;
     }
-
-    .product img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    .card {
+      background: radial-gradient(circle, rgba(0,64,0,0.3) 0%, rgba(0,0,0,0.9) 100%);
+      border: 1px solid #004400;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0,255,0,0.1);
+      transition: all 0.3s ease;
     }
-
-    .product h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 10px;
+    .card:hover {
+      box-shadow: 0 0 30px #00ff00;
+      transform: translateY(-4px) scale(1.03);
     }
-
-    .product p {
-      font-size: 0.95rem;
-      color: #aaa;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 26px;
-      background: #ffffff;
-      color: #0e0e0e;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background: #e5e5e5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #555;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
+    canvas#snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
     }
   </style>
 </head>
+<body class="text-white relative overflow-hidden">
 
-<body>
+<!-- Snow canvas -->
+<canvas id="snow"></canvas>
 
-<header>
-  <h1>vex.gg</h1>
+<header class="flex justify-between items-center p-4 relative z-10">
+  <div class="text-3xl font-bold">≡</div>
+  <div class="space-x-2">
+    <button class="btn">Purchase Evo.gg</button>
+    <button class="btn">Discord</button>
+  </div>
 </header>
 
-<section class="hero">
-  <h2>Clean, Premium Roblox Scripts</h2>
-  <p>High-quality, reliable scripts designed for top-tier Roblox performance.</p>
+<main class="text-center pt-24 relative z-10">
+  <h1 class="text-9xl font-extrabold drop-shadow-lg">Evo.gg</h1>
+  <p class="mt-2 text-gray-400">The one to change it all, the ultimate free scripting utility.</p>
+  <div class="mt-6 space-x-2">
+    <button class="btn">Purchase Evo Scripts</button>
+    <button class="btn">Discord</button>
+  </div>
+</main>
+
+<section class="mt-32 text-center relative z-10">
+  <p class="text-green-400 uppercase text-sm">Features</p>
+  <h2 class="text-3xl font-bold mt-2">Why Use Evo.gg?</h2>
+  <p class="text-gray-400 mb-12">Every reason to choose Evo.gg, none to doubt it.</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="card">
+      <div class="text-2xl mb-2">💲</div>
+      <h3 class="text-lg font-semibold">Almost Free</h3>
+      <p class="text-gray-400 mt-2">Enjoy premium-level scripting at just a bit of money — Evo.gg is worth every penny.</p>
+    </div>
+    <div class="card">
+      <div class="text-2xl mb-2">⚙️</div>
+      <h3 class="text-lg font-semibold">Always Improving</h3>
+      <p class="text-gray-400 mt-2">Evo.gg is here for the long run and keeps getting better.</p>
+    </div>
+    <div class="card">
+      <div class="text-2xl mb-2">🔄</div>
+      <h3 class="text-lg font-semibold">Fast Updates</h3>
+      <p class="text-gray-400 mt-2">Evo.gg is always up to date, so you never have to wait.</p>
+    </div>
+    <div class="card">
+      <div class="text-2xl mb-2">🎨</div>
+      <h3 class="text-lg font-semibold">Workable</h3>
+      <p class="text-gray-400 mt-2">Fully Workable, giving you complete control over Evo.gg.</p>
+    </div>
+    <div class="card">
+      <div class="text-2xl mb-2">🛡️</div>
+      <h3 class="text-lg font-semibold">Premium Support</h3>
+      <p class="text-gray-400 mt-2">Need help? Enjoy premium support at no cost.</p>
+    </div>
+    <div class="card">
+      <div class="text-2xl mb-2">☑️</div>
+      <h3 class="text-lg font-semibold">Best</h3>
+      <p class="text-gray-400 mt-2">Despite being almost free, Evo.gg has the best services you could need.</p>
+    </div>
+  </div>
 </section>
 
-<section class="products">
-  <div class="product">
-    <img src="https://i.ibb.co/H7TyNFC/script1.png" alt="Auto Farm Script">
-    <h3>Auto Farm</h3>
-    <p>Effortlessly farm resources while you chill. Reliable and optimized.</p>
-    <a href="#" class="button">Buy Script</a>
-  </div>
+<!-- Snow animation script -->
+<script>
+  const canvas = document.getElementById('snow');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+  let flakes = [];
 
-  <div class="product">
-    <img src="https://i.ibb.co/JqGJBr9/script2.png" alt="ESP + Aimbot">
-    <h3>ESP + Aimbot</h3>
-    <p>Dominate the game with clean ESP visuals and accurate aimbot features.</p>
-    <a href="#" class="button">Buy Script</a>
-  </div>
+  function createSnowFlakes() {
+    for (let i = 0; i < 300; i++) {
+      flakes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 3 + 1,
+        d: Math.random() + 0.5
+      });
+    }
+  }
 
-  <div class="product">
-    <img src="https://i.ibb.co/MnDPqjC/script3.png" alt="Gamepass Unlocker">
-    <h3>Gamepass Unlocker</h3>
-    <p>Instantly unlock exclusive gamepass content without limits.</p>
-    <a href="#" class="button">Buy Script</a>
-  </div>
-</section>
+  function drawSnowFlakes() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.beginPath();
+    for (let i = 0; i < flakes.length; i++) {
+      let f = flakes[i];
+      ctx.moveTo(f.x, f.y);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+    }
+    ctx.fill();
+    moveSnowFlakes();
+  }
 
-<footer>
-  &copy; 2025 vex.gg. All rights reserved.
-</footer>
+  function moveSnowFlakes() {
+    for (let i = 0; i < flakes.length; i++) {
+      let f = flakes[i];
+      f.x += Math.pow(f.d, 1.5);
+      f.y += Math.sin(f.x * 0.01) * 0.5;
+
+      if (f.x > width) {
+        flakes[i] = { x: 0, y: Math.random() * height, r: f.r, d: f.d };
+      }
+    }
+  }
+
+  function updateSnow() {
+    drawSnowFlakes();
+    requestAnimationFrame(updateSnow);
+  }
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    flakes = [];
+    createSnowFlakes();
+  });
+
+  createSnowFlakes();
+  updateSnow();
+</script>
 
 </body>
 </html>
