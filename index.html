@@ -7,135 +7,140 @@
   <link rel="icon" type="image/png" href="evogg2.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-  body {
-    background-color: #000;
-    background-image:
-      radial-gradient(circle at top left, rgba(64, 0, 0, 0.2), transparent 70%),
-      linear-gradient(90deg, rgba(64,0,0,0.15) 1px, transparent 1px),
-      linear-gradient(rgba(64,0,0,0.15) 1px, transparent 1px);
-    background-size: 80px 80px, 80px 80px, 80px 80px;
-  }
-  .btn {
-    background: linear-gradient(145deg, #440000, #220000);
-    border: 1px solid #aa0000;
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 0 10px #ff0000;
-    transition: all 0.3s ease;
-  }
-  .btn:hover {
-    background: #330000;
-    box-shadow: 0 0 20px #ff0000;
-  }
-  .card {
-    background: radial-gradient(circle, rgba(64,0,0,0.3) 0%, rgba(0,0,0,0.9) 100%);
-    border: 1px solid #440000;
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(255,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-  .card:hover {
-    box-shadow: 0 0 30px #ff0000;
-    transform: translateY(-4px) scale(1.03);
-  }
-  canvas#snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #110000;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #aa0000;
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ff0000;
-  }
-</style>
+    body {
+      background-color: #0a0000;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,0,0,0.1), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255,0,0,0.1), transparent 60%);
+      background-size: cover;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #8B0000, #300000);
+      padding: 0.75rem 1.25rem;
+      border-radius: 9999px;
+      color: #fff;
+      font-weight: 600;
+      border: 1px solid #ff0000;
+      box-shadow: 0 0 15px #ff000040;
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      background: #c10000;
+      box-shadow: 0 0 25px #ff000080;
+      transform: translateY(-2px);
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(64,0,0,0.5), rgba(0,0,0,0.8));
+      border: 1px solid #2f0000;
+      border-radius: 1rem;
+      padding: 2rem;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 30px rgba(255,0,0,0.4);
+      transform: translateY(-5px) scale(1.025);
+    }
+
+    canvas#snow, canvas#lightning {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    canvas#snow {
+      z-index: 0;
+    }
+
+    canvas#lightning {
+      z-index: 10;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #110000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #aa0000;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff0000;
+    }
+  </style>
 </head>
-<body class="text-white relative">
+<body class="text-white font-sans relative overflow-x-hidden">
 
-<!-- Snow canvas -->
+<!-- Snow and Lightning canvas -->
 <canvas id="snow"></canvas>
+<canvas id="lightning"></canvas>
 
-<header class="flex justify-between items-center p-4 relative z-10">
-  <!-- Logo on the left -->
-  <div>
-	<img src="evogg2.png" alt="Evo.gg Logo" class="h-12 w-auto">
-  </div>
-  
-  <!-- Buttons on the right -->
-  <div class="space-x-2">
+<header class="flex justify-between items-center px-6 py-4 relative z-10 backdrop-blur bg-black/40 border-b border-red-900">
+  <img src="evogg2.png" alt="Evo.gg Logo" class="h-12 w-auto">
+  <div class="space-x-4">
     <a href="https://dsc.gg/evogg" target="_blank" class="btn">Purchase Evo.gg</a>
     <a href="https://discord.gg/yourdiscordlink" target="_blank" class="btn">Discord</a>
   </div>
 </header>
 
-<main class="text-center pt-24 relative z-10">
-  <h1 class="text-9xl font-extrabold drop-shadow-lg">Evo.gg</h1>
-  <p class="mt-2 text-gray-400">The one to change it all, the ultimate free scripting utility.</p>
-  <div class="mt-6 space-x-2">
+<main class="text-center pt-36 relative z-10">
+  <h1 class="text-[5rem] md:text-[7rem] font-black tracking-tight drop-shadow-[0_0_30px_red]">Evo.gg</h1>
+  <p class="mt-4 text-gray-400 text-lg">The one to change it all — the ultimate free scripting utility.</p>
+  <div class="mt-8 space-x-4">
     <a href="https://www.roblox.com/communities/35919808/Crimetime#!/about" target="_blank" class="btn">Roblox Group</a>
     <a href="https://dsc.gg/evogg" target="_blank" class="btn">Purchase Evo.gg</a>
   </div>
 </main>
 
-<section class="mt-32 text-center relative z-10">
-  <p class="text-red-400 uppercase text-sm">Features</p>
-  <h2 class="text-3xl font-bold mt-2">Why Use Evo.gg?</h2>
-  <p class="text-gray-400 mb-12">Every reason to choose Evo.gg, none to doubt it.</p>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<section class="mt-32 text-center relative z-10 px-6">
+  <p class="text-red-400 uppercase tracking-widest text-sm mb-2">Features</p>
+  <h2 class="text-4xl font-extrabold mb-4">Why Choose Evo.gg?</h2>
+  <p class="text-gray-400 max-w-2xl mx-auto mb-12">Every reason to pick Evo.gg — none to doubt it. See what makes us stand out.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
     <div class="card">
-      <div class="text-2xl mb-2">💲</div>
-      <h3 class="text-lg font-semibold">Almost Free</h3>
-      <p class="text-gray-400 mt-2">Enjoy premium-level scripting at just a bit of money — Evo.gg is worth every penny.</p>
+      <h3 class="text-xl font-bold mb-2">Almost Free</h3>
+      <p class="text-gray-400">Premium-level scripting for a fraction of the price — worth every cent.</p>
     </div>
     <div class="card">
-      <div class="text-2xl mb-2">⚙️</div>
-      <h3 class="text-lg font-semibold">Always Improving</h3>
-      <p class="text-gray-400 mt-2">Evo.gg is here for the long run and keeps getting better.</p>
+      <h3 class="text-xl font-bold mb-2">Constantly Evolving</h3>
+      <p class="text-gray-400">Relentless improvements and feature upgrades over time.</p>
     </div>
     <div class="card">
-      <div class="text-2xl mb-2">🔄</div>
-      <h3 class="text-lg font-semibold">Fast Updates</h3>
-      <p class="text-gray-400 mt-2">Evo.gg is always up to date, so you never have to wait.</p>
+      <h3 class="text-xl font-bold mb-2">Lightning Updates</h3>
+      <p class="text-gray-400">Always on time with updates — no delays, no downtime.</p>
     </div>
     <div class="card">
-      <div class="text-2xl mb-2">🎨</div>
-      <h3 class="text-lg font-semibold">Workable</h3>
-      <p class="text-gray-400 mt-2">Fully Workable, giving you complete control over Evo.gg.</p>
+      <h3 class="text-xl font-bold mb-2">Workable Flexibility</h3>
+      <p class="text-gray-400">Highly adaptable and workable for your exact needs.</p>
     </div>
     <div class="card">
-      <div class="text-2xl mb-2">🛡️</div>
-      <h3 class="text-lg font-semibold">Premium Support</h3>
-      <p class="text-gray-400 mt-2">Need help? Enjoy premium support at no cost.</p>
+      <h3 class="text-xl font-bold mb-2">Premium Support</h3>
+      <p class="text-gray-400">Professional-grade assistance, always ready to help.</p>
     </div>
     <div class="card">
-      <div class="text-2xl mb-2">☑️</div>
-      <h3 class="text-lg font-semibold">Best</h3>
-      <p class="text-gray-400 mt-2">Despite being almost free, Evo.gg has the best services you could need.</p>
+      <h3 class="text-xl font-bold mb-2">Simply the Best</h3>
+      <p class="text-gray-400">The most powerful service at this price point, hands down.</p>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="text-center text-gray-500 text-sm py-6 relative z-10 mt-16">
-  © 2025 Evo.gg — All rights reserved. Made only By <span class="text-red-500 font-semibold">F00GY</span>
+<footer class="text-center text-gray-500 text-sm py-8 mt-24 border-t border-red-900 relative z-10">
+  © 2025 Evo.gg — All rights reserved. Built by <span class="text-red-500 font-semibold">F00GY</span>
 </footer>
 
-
-<!-- Snow animation script -->
+<!-- Snow animation -->
 <script>
   const canvas = document.getElementById('snow');
   const ctx = canvas.getContext('2d');
@@ -148,7 +153,7 @@
       flakes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 3 + 1,
+        r: Math.random() * 2 + 1,
         d: Math.random() + 0.5
       });
     }
@@ -156,25 +161,23 @@
 
   function drawSnowFlakes() {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.beginPath();
-    for (let i = 0; i < flakes.length; i++) {
-      let f = flakes[i];
+    for (let f of flakes) {
       ctx.moveTo(f.x, f.y);
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
     }
     ctx.fill();
     moveSnowFlakes();
   }
 
   function moveSnowFlakes() {
-    for (let i = 0; i < flakes.length; i++) {
-      let f = flakes[i];
+    for (let f of flakes) {
       f.x += Math.pow(f.d, 1.5);
       f.y += Math.sin(f.x * 0.01) * 0.5;
-
       if (f.x > width) {
-        flakes[i] = { x: 0, y: Math.random() * height, r: f.r, d: f.d };
+        f.x = 0;
+        f.y = Math.random() * height;
       }
     }
   }
@@ -193,6 +196,63 @@
 
   createSnowFlakes();
   updateSnow();
+</script>
+
+<!-- Realistic Lightning animation -->
+<script>
+  const lightningCanvas = document.getElementById('lightning');
+  const lightningCtx = lightningCanvas.getContext('2d');
+  let lw = lightningCanvas.width = window.innerWidth;
+  let lh = lightningCanvas.height = window.innerHeight;
+
+  function createLightningPath(startX, startY, segments, spread) {
+    const path = [{ x: startX, y: startY }];
+    for (let i = 0; i < segments; i++) {
+      const prev = path[path.length - 1];
+      const newX = prev.x + (Math.random() - 0.5) * spread;
+      const newY = prev.y + (lh / segments);
+      path.push({ x: newX, y: newY });
+    }
+    return path;
+  }
+
+  function drawLightning(path) {
+    lightningCtx.strokeStyle = 'rgba(255,255,255,0.9)';
+    lightningCtx.lineWidth = 4;
+    lightningCtx.shadowBlur = 20;
+    lightningCtx.shadowColor = '#ff0000';
+    lightningCtx.beginPath();
+    lightningCtx.moveTo(path[0].x, path[0].y);
+    for (let point of path) {
+      lightningCtx.lineTo(point.x, point.y);
+    }
+    lightningCtx.stroke();
+  }
+
+  function clearLightning() {
+    lightningCtx.clearRect(0, 0, lw, lh);
+  }
+
+  function triggerLightning() {
+    clearLightning();
+    const startX = Math.random() * lw;
+    const path = createLightningPath(startX, 0, 20, 60);
+    drawLightning(path);
+    setTimeout(clearLightning, 600);
+  }
+
+  function lightningLoop() {
+    triggerLightning();
+    const next = Math.random() * 2000 + 2000;
+    setTimeout(lightningLoop, next);
+  }
+
+  window.addEventListener('resize', () => {
+    lw = lightningCanvas.width = window.innerWidth;
+    lh = lightningCanvas.height = window.innerHeight;
+  });
+
+  lightningLoop();
 </script>
 
 </body>
